@@ -1,0 +1,140 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// datasource db {
+//   provider = "mongodb"
+//   url      = env("DATABASE_URL")
+// }
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Users {
+  id       Int        @id @default(autoincrement())
+  email    String     @unique
+  password String
+  sessions Sessions[] @relation("UserSessions")
+}
+
+model Sessions {
+  id         String @id
+  expires_at Int // Store as a timestamp (integer)
+  user_id    Int // Reference to Users model
+  user       Users  @relation("UserSessions", fields: [user_id], references: [id])
+}
+
+model ServicesImages {
+  id        String   @id @default(uuid())
+  imageName String
+  imagePath String
+  serviceId String // Use @db.ObjectId to match the Services model
+  service   Services @relation(fields: [serviceId], references: [id])
+}
+
+model Services {
+  id             String           @id @default(uuid())
+  title          String
+  titleAr        String
+  description    String
+  descriptionAr  String
+  iconName       String
+  coverImgPath   String
+  iconPath       String
+  coverImgName   String
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  videos         String?
+  servicesImages ServicesImages[]
+}
+
+model highlights {
+  id        String   @id @default(uuid())
+  nameEn    String
+  nameAr    String
+  number    Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AvailableJobs {
+  id        String   @id @default(uuid())
+  jobNameEn String
+  jobNameAr String
+  available Boolean
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Jobs {
+  id          String   @id @default(uuid())
+  name        String
+  governorate String
+  phone       String
+  email       String
+  file        String
+  jobName     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model News {
+  id            String   @id @default(uuid())
+  title         String
+  titleAr       String
+  description   String
+  descriptionAr String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  imagePath     String
+  imageName     String
+}
+
+model Contacts {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  branch    String?
+  mobile    String
+  message   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Branches {
+  id         String   @id @default(uuid())
+  name       String
+  nameAr     String
+  location   String
+  locationAr String
+  mobile     String
+  whatsApp   String
+  gps        String   @default("")
+  imagePath  String
+  imageName  String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+// enum ClientType {
+//   syndicates
+//   healthcareCompanies
+//   discountContractCompanies
+//   contractingCompanies
+// }
+
+model Clients {
+  id        String   @id @default(uuid())
+  name      String
+  nameAr    String
+  imagePath String
+  imageName String
+  type      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

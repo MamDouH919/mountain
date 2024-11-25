@@ -1,0 +1,44 @@
+.bannerSwiper.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.bannerSwiper .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.bannerSwiper .swiper-slide .content-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: #fff;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.bannerSwiper .swiper-slide .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+}
+
+.bannerSwiper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
