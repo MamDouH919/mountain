@@ -1,4 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow: /admin/
-Sitemap: https://arabclinic.net/sitemap.xml
+Sitemap: https://mountain-egy.site/sitemap.xml

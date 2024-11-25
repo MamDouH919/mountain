@@ -5,25 +5,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: 'https://arabclinic.net',
+      url: 'https://mountain-egy.site',
       lastModified,
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
-      url: 'https://arabclinic.net/clinets',
+      url: 'https://mountain-egy.site/clinets',
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.64,
     },
     {
-      url: 'https://arabclinic.net/employment',
+      url: 'https://mountain-egy.site/employment',
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.64,
     },
     {
-      url: 'https://arabclinic.net/news',
+      url: 'https://mountain-egy.site/news',
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.64,

@@ -14,7 +14,7 @@ import { config } from "@/config";
 const cairo = Cairo({ weight: ["600", "700", "800"], subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Mountain - اراب كلينيك",
+  title: "Mountain - ماونتين",
   description: "Mountain Digital Marketing - ماونتن للتسويق الرقمي",
   robots: "index,follow",
   keywords: "",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "article",
     authors: ["Mountain", "https://mountain-egy.site"],
     url: "https://mountain-egy.site",
-    title: "Mountain - اراب كلينيك",
+    title: "Mountain - ماونتين",
     description: "",
     images: [
       {
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mountain - اراب كلينيك",
-    description: "مركز أراب كلينك - نعمل من أجلك علي مدار اليوم Center Mountain - We work for you around the clock",
+    title: "Mountain - ماونتين",
+    description: "Mountain Digital Marketing - ماونتن للتسويق الرقمي",
     images: "https://mountain-egy.site/logo.webp",
   },
   manifest: "/manifest.json",

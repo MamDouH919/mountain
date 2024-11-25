@@ -45,9 +45,9 @@ const LoginForm = () => {
             })
         }
     }
-    const addUser = async () => {
-        const res = await addUserMut()
-    }
+    // const addUser = async () => {
+    //     const res = await addUserMut()
+    // }
 
 
     return (
@@ -95,7 +95,7 @@ const LoginForm = () => {
                     </Grid>
                 </form>
 
-                <Button onClick={addUser}>add New</Button>
+                {/* <Button onClick={addUser}>add New</Button> */}
             </Paper>
         </Root>
     )
